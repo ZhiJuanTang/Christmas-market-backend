@@ -1,5 +1,7 @@
+import 'dotenv/config.js';
 import express from 'express';
 import marketsRouter from "./routes/markets.js"
+
 
 const app = express();
 const port = process.env.PORT || 5000;
