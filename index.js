@@ -1,9 +1,10 @@
 import 'dotenv/config.js';
 import express from 'express';
 import marketsRouter from "./routes/markets.js"
-
+import cors from 'cors';
 
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 5000;
 app.use( '/markets', marketsRouter )
 
