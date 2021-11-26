@@ -12,10 +12,10 @@ marketsRouter.get('/', async (req, res) => {
 
 marketsRouter.get('/:id', async (req,res) => {
     const id = req.params.id;
-    const {rows} = await pool.query(`SELECT * FROM post WHERE id='${id}';`);
+    const {rows:[market]} = await pool.query(`SELECT * FROM post WHERE id='${id}';`);
     //const {rows} = await pool.query(`SELECT * FROM post WHERE id=$1;`, [id]);
-    console.log(rows);
-    res.json(rows);
+    console.log(market);
+    res.json(market);
 })
 
 marketsRouter.post('/', async (req,res) => {
